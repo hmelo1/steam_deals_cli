@@ -1,0 +1,9 @@
+Website: https://steamdb.info/sales/
+
+What do I want to show:
+  Daily Deals
+    Game's name
+    Game Price
+    % Off
+    Date it ends
+    Game Rating

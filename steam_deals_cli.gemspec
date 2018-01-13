@@ -6,7 +6,7 @@ require "steam_deals_cli/version"
 Gem::Specification.new do |spec|
   spec.name          = "steam_deals_cli"
   spec.version       = SteamDealsCli::VERSION
-  spec.authors       = ["TODO: Write your name"]
+  spec.authors       = ["hmelo1"]
   spec.email         = ["heriberto@melo.nyc"]
 
   spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
@@ -32,4 +32,8 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "pry"
+  spec.add_development_dependency "rspec"
+
+  spec.add_dependency "nokogiri"
 end
