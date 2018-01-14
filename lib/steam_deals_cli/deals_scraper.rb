@@ -25,7 +25,7 @@ class SteamDealsCli::Deals_Scraper
 
   def make_deals
     scrape_deals.each do |deal|
-      
+      SteamDealsCli::Deals_Scraper.deals_from_page(deal)
     end
   end
 
