@@ -8,14 +8,6 @@ class SteamDealsCli::Deals_Scraper
     Nokogiri::HTML(open("https://steamdb.info/sales/?min_discount=0&min_rating=0"))
   end
 
-  def scrape_deals_daily
-    #self.get_page.css("td.sales-daily-deal")
-  end
-
-  def scrape_deals_wknd
-    #self.get_page.css("td.sales-weekend-deal")
-  end
-
   def current_deals_count
     self.scrape_deals.length
   end
@@ -26,7 +18,7 @@ class SteamDealsCli::Deals_Scraper
 
   def make_deals
     scrape_deals.each do |deal|
-      SteamDealsCli::Deals_Scraper.deals_from_page(deal)
+      SteamDealsCli::Steam_Deals.deals_from_page(deal)
     end
   end
 

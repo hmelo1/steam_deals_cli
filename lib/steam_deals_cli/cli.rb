@@ -4,6 +4,7 @@ require_relative './steam_deals.rb'
 class SteamDealsCli::CLI
 
   def call
+    SteamDealsCli::Deals_Scraper.new.make_deals
     puts "Welcome to Steam's daily and weekend deals!"
     start
   end
@@ -23,11 +24,7 @@ class SteamDealsCli::CLI
       puts "100:"
     elsif input == 3
       puts "All:"
-      SteamDealsCli::Steam_Deals.all
     end
   end
 
-  def print_deals
-
-  end
 end

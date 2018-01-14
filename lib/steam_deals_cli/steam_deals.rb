@@ -17,17 +17,19 @@ class SteamDealsCli::Steam_Deals
     )
   end
 
-  def initilize(name, price_discount, category)
+  def initialize(name, price_discount, discounted_price, category)
     @name = name
     @price_discount = price_discount
     @discounted_price = discounted_price
     @category = category
     @@all << self
+    binding.pry
   end
 
   def self.all
     @@all
   end
+
 end
 
 #name: deal.css("a.b").text => Earth 2160
