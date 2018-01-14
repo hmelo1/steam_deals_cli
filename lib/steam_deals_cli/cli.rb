@@ -1,3 +1,4 @@
+require_relative './deals_scraper.rb'
 class SteamDealsCli::CLI
 
   def call
@@ -14,9 +15,9 @@ class SteamDealsCli::CLI
     input = gets.strip
 
     if input.to_i == 1
-      puts "Daily Deals:"
+      puts "Daily Deals: #{SteamDealsCli::Deals_Scraper.new.scrape_deals_daily}"
     elsif input.to_i == 2
-      puts "Weekend Deals:"
+      puts "Weekend Deals: #{SteamDealsCli::Deals_Scraper.new.scrape_deals_wknd}"
     else
       puts "Invalid option; "
     end
