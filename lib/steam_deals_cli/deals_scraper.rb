@@ -1,5 +1,6 @@
 require  'open-uri'
 require 'nokogiri'
+require_relative './steam_deals.rb'
 
 class SteamDealsCli::Deals_Scraper
 
