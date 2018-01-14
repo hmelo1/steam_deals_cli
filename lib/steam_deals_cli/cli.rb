@@ -1,4 +1,4 @@
-class Steam_Deals_Cli::CLI
+class SteamDealsCli::CLI
   puts "HELLO!"
 
 end

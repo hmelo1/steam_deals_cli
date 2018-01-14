@@ -1,4 +1,4 @@
-class Steam_Deals_Cli::Deals_Scraper
+class SteamDealsCli::Deals_Scraper
 
 
 end

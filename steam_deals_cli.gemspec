@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["hmelo1"]
   spec.email         = ["heriberto@melo.nyc"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "Pull deals and sales off SteamDB"
+  spec.description   = "Pull prices, sales, video game names, and daily deals off Steam DB"
+  spec.homepage      = "https://github.com/hmelo1/steam_deals_cli.git"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -35,6 +35,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry"
   spec.add_development_dependency "rspec"
 
-  spec.add_dependency "nokogiri"
-  spec.add_dependency "open_uri_redirections"
+  spec.add_development_dependency "nokogiri"
+  spec.add_development_dependency "open_uri_redirections"
 end
