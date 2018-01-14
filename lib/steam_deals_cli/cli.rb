@@ -8,18 +8,20 @@ class SteamDealsCli::CLI
 
   def start
     puts "-----------------------------------------"
-    puts "\nWhich would you like to see? The Daily Deals or the Weekend Deals?"
-    puts "For Daily Deals press 1."
-    puts "For Weekend Deals press 2."
+    puts "\nWhich would you like to see? There are currently #{SteamDealsCli::Deals_Scraper.new.current_deals_count} products on sale."
 
-    input = gets.strip
+    puts "How would you like to see them sorted? By 50, 100 or all."
+    puts "Ex. For 50, type '1'"
+    input = gets.to_i
 
-    if input.to_i == 1
-      puts "Daily Deals: #{SteamDealsCli::Deals_Scraper.new.scrape_deals_daily}"
-    elsif input.to_i == 2
-      puts "Weekend Deals: #{SteamDealsCli::Deals_Scraper.new.scrape_deals_wknd}"
-    else
-      puts "Invalid option; "
+    if input == 1
+      puts "50:"
+    elsif input == 2
+      puts "100:"
+    elsif input == 3
+      puts "All:"
     end
+
+
   end
 end
