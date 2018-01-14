@@ -38,7 +38,7 @@ class SteamDealsCli::Steam_Deals
   end
 
   def self.special_promos
-    self.all.select{|game| game.category == "Weeklong Deals"}
+    self.all.select{|game| game.category =~ /Special Promotion/}
   end
 
   def self.daily_deals

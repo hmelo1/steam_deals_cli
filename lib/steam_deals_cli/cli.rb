@@ -5,20 +5,15 @@ class SteamDealsCli::CLI
 
   def call
     SteamDealsCli::Deals_Scraper.new.make_deals
-    puts "Welcome to Steam's daily and weekend deals!"
+    puts "Welcome to Steam's current sales!"
     start
   end
 
   def start
     puts "-----------------------------------------"
     puts "\nWhich would you like to see? There are currently #{SteamDealsCli::Deals_Scraper.new.current_deals_count} products on sale."
-
     puts "How would you like to see them sorted? Would you like to view the Weeklong Deals, Special Promotoions, Daily Deals, or Weekend Deals "
-
-
-
     information
-
   end
 
   def information
