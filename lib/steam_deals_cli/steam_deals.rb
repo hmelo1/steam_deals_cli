@@ -23,12 +23,28 @@ class SteamDealsCli::Steam_Deals
     @discounted_price = discounted_price
     @category = category
     @@all << self
-    binding.pry
   end
 
   def self.all
     @@all
   end
+
+  def self.weekend_deals
+    self.all.select{|game| game.category == "Weekend Deal"}
+  end
+
+  def self.weeklong_deals
+    self.all.select{|game| game.category == "Weeklong Deals"}
+  end
+
+  def self.special_promos
+    self.all.select{|game| game.category == "Weeklong Deals"}
+  end
+
+  def self.daily_deals
+    self.all.select{|game| game.category == "Daily Deal"}
+  end
+
 
 end
 
