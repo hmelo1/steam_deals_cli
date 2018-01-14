@@ -45,7 +45,6 @@ class SteamDealsCli::Steam_Deals
     self.all.select{|game| game.category == "Daily Deal"}
   end
 
-
 end
 
 #name: deal.css("a.b").text => Earth 2160

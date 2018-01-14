@@ -14,15 +14,18 @@ class SteamDealsCli::CLI
     puts "\nWhich would you like to see? There are currently #{SteamDealsCli::Deals_Scraper.new.current_deals_count} products on sale."
 
     puts "How would you like to see them sorted? Would you like to view the Weeklong Deals, Special Promotoions, Daily Deals, or Weekend Deals "
+
+
+
+    information
+
+  end
+
+  def information
     puts "Ex. For Weeklong Deals, type '1'"
     puts "If you'd like to exit, type '5'"
     input = gets.to_i
 
-    information(input)
-
-  end
-
-  def information(input)
     if input == 1
       print_discount(SteamDealsCli::Steam_Deals.weeklong_deals)
     elsif input == 2
@@ -35,8 +38,7 @@ class SteamDealsCli::CLI
       puts "Thanks! If you'd like to see more deals com'on back!"
     else
       puts "#{input} is invalid. Please try again."
-      input = gets.to_i
-      information(input)
+      information
     end
   end
 
