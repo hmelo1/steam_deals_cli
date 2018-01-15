@@ -9,7 +9,7 @@ class CLI
   def start
     puts "-----------------------------------------"
     puts "\nWhich would you like to see? There are currently #{Deals_Scraper.new.current_deals_count} products on sale."
-    puts "How would you like to see them sorted? Would you like to view the Weeklong Deals, Special Promotoions, Daily Deals, or Weekend Deals "
+    puts "\nHow would you like to see them sorted? Would you like to view the Weeklong Deals, Special Promotoions, Daily Deals, or Weekend Deals "
     information
   end
 

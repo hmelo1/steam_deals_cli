@@ -11,4 +11,4 @@ require "steam_deals_cli"
 # Pry.start
 
 require "irb"
-IRB.start
+CLI.new.call
