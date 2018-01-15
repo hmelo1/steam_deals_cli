@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata["allowed_push_host"] = "https://rubygems.org"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
@@ -32,9 +32,9 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "pry"
-  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "pry",  '~> 0.11.3'
+  spec.add_development_dependency "rspec", '~> 3.7'
 
-  spec.add_development_dependency "nokogiri"
-  spec.add_development_dependency "open_uri_redirections"
+  spec.add_development_dependency "nokogiri", '~> 1.8', '>= 1.8.1'
+  spec.add_development_dependency "open_uri_redirections", '~> 0.2.1'
 end

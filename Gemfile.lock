@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    steam_deals_cli (0.1.0)
+    steam_deals_cli (0.1.1)
 
 GEM
   remote: https://rubygems.org/
@@ -36,11 +36,11 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16)
-  nokogiri
-  open_uri_redirections
-  pry
+  nokogiri (~> 1.8, >= 1.8.1)
+  open_uri_redirections (~> 0.2.1)
+  pry (~> 0.11.3)
   rake (~> 10.0)
-  rspec
+  rspec (~> 3.7)
   steam_deals_cli!
 
 BUNDLED WITH

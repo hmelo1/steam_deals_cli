@@ -22,13 +22,13 @@ class SteamDealsCli::CLI
     input = gets.to_i
 
     if input == 1
-      print_discount(SteamDealsCli::Steam_Deals.weeklong_deals)
+      print_discounts(SteamDealsCli::Steam_Deals.weeklong_deals)
     elsif input == 2
-      print_discount(SteamDealsCli::Steam_Deals.special_promos)
+      print_discounts(SteamDealsCli::Steam_Deals.special_promos)
     elsif input == 3
-      print_discount(SteamDealsCli::Steam_Deals.daily_deals)
+      print_discounts(SteamDealsCli::Steam_Deals.daily_deals)
     elsif input == 4
-      print_discount(SteamDealsCli::Steam_Deals.weekend_deals)
+      print_discounts(SteamDealsCli::Steam_Deals.weekend_deals)
     elsif input == 5
       puts "Thanks! If you'd like to see more deals com'on back!"
     else
@@ -37,13 +37,14 @@ class SteamDealsCli::CLI
     end
   end
 
-  def print_discount(games)
-    games.each do |game|
+  def print_discounts(games)
+    games.each_with_index do |game, index|
       puts "----------------------------"
       puts ""
-      puts "Game:          #{game.name}"
-      puts "Price:            #{game.discounted_price}"
-      puts "% Off:           #{game.price_discount}"
+      puts "#{index+1}."
+      puts "Game:                               #{game.name}"
+      puts "Discounted Price:                   #{game.discounted_price}"
+      puts "% Off:                              #{game.price_discount}"
       puts ""
     end
   end
