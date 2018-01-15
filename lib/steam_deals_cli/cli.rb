@@ -1,17 +1,14 @@
-require_relative './deals_scraper.rb'
-require_relative './steam_deals.rb'
-
-class SteamDealsCli::CLI
+class CLI
 
   def call
-    SteamDealsCli::Deals_Scraper.new.make_deals
+    Deals_Scraper.new.make_deals
     puts "Welcome to Steam's current sales!"
     start
   end
 
   def start
     puts "-----------------------------------------"
-    puts "\nWhich would you like to see? There are currently #{SteamDealsCli::Deals_Scraper.new.current_deals_count} products on sale."
+    puts "\nWhich would you like to see? There are currently #{Deals_Scraper.new.current_deals_count} products on sale."
     puts "How would you like to see them sorted? Would you like to view the Weeklong Deals, Special Promotoions, Daily Deals, or Weekend Deals "
     information
   end
@@ -22,13 +19,13 @@ class SteamDealsCli::CLI
     input = gets.to_i
 
     if input == 1
-      print_discounts(SteamDealsCli::Steam_Deals.weeklong_deals)
+      print_discounts(Steam_Deals.weeklong_deals)
     elsif input == 2
-      print_discounts(SteamDealsCli::Steam_Deals.special_promos)
+      print_discounts(Steam_Deals.special_promos)
     elsif input == 3
-      print_discounts(SteamDealsCli::Steam_Deals.daily_deals)
+      print_discounts(Steam_Deals.daily_deals)
     elsif input == 4
-      print_discounts(SteamDealsCli::Steam_Deals.weekend_deals)
+      print_discounts(Steam_Deals.weekend_deals)
     elsif input == 5
       puts "Thanks! If you'd like to see more deals com'on back!"
     else

@@ -1,9 +1,11 @@
-<<<<<<< HEAD
 # SteamDealsCli
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/steam_deals_cli`. To experiment with that code, run `bin/console` for an interactive prompt.
+This Ruby Gem outputs the current deals on Steam organized by the type of deal.
+Weeklong Deals; last all week.
+Weekend Deals; last as long as the weekend.
+Daily Deals; last for only a day.
+Special Promotions; Offered when you own the original game or when a developer is feeling awesome :)
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -23,7 +25,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Type the below and follow the on screen prompts.
+```ruby
+CLI.new.call
+```
 
 ## Development
 

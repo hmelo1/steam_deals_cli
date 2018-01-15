@@ -1,8 +1,4 @@
-require  'open-uri'
-require 'nokogiri'
-require_relative './steam_deals.rb'
-
-class SteamDealsCli::Deals_Scraper
+class Deals_Scraper
 
   def get_page
     Nokogiri::HTML(open("https://steamdb.info/sales/?min_discount=0&min_rating=0"))
@@ -18,7 +14,7 @@ class SteamDealsCli::Deals_Scraper
 
   def make_deals
     scrape_deals.each do |deal|
-      SteamDealsCli::Steam_Deals.deals_from_page(deal)
+      Steam_Deals.deals_from_page(deal)
     end
   end
 

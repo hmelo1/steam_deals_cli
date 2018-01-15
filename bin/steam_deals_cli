@@ -2,4 +2,4 @@
 
 require_relative '../lib/steam_deals_cli'
 
-SteamDealsCli::CLI.new.call
+CLI.new.call

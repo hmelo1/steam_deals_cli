@@ -1,8 +1,4 @@
-require  'open-uri'
-require 'nokogiri'
-require_relative './deals_scraper.rb'
-
-class SteamDealsCli::Steam_Deals
+class Steam_Deals
 
   attr_accessor :name, :price_discount , :category, :discounted_price
 
