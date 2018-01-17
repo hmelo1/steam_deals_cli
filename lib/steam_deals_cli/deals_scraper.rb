@@ -1,7 +1,7 @@
 class Deals_Scraper
 
   def get_page
-    Nokogiri::HTML(open("https://steamdb.info/sales/?min_discount=0&min_rating=0"))
+    Nokogiri::HTML(open("https://steamdb.info/sales"))
   end
 
   def current_deals_count
