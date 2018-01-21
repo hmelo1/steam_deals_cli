@@ -1,6 +1,6 @@
 class Steam_Deals
 
-  attr_accessor :name, :price_discount , :category, :discounted_price, :url
+  attr_accessor :name, :price_discount , :category, :discounted_price, :url, :test1
 
 @@all = []
 
@@ -19,12 +19,16 @@ class Steam_Deals
     @price_discount = price_discount
     @discounted_price = discounted_price
     @category = category
-    @url = url
+    @url = Steam_Deals.url_creation(url)
     @@all << self
   end
 
   def self.url_creation(url)
     app_url = "https://steamdb.info#{url}"
+  end
+
+  def self.scrape_selection(url)
+      Nokogiri::HTML(open(url))
   end
 
   def self.all
@@ -47,6 +51,11 @@ class Steam_Deals
     self.all.select{|game| game.category == "Daily Deal"}
   end
 
+  def self.additional_info(game)
+    #Steam_Deals.scrape_selection(game.url)
+    game.test1 = "Hello"
+    #binding.pry
+  end
 end
 
 #name: deal.css("a.b").text => Earth 2160

@@ -17,5 +17,4 @@ class Deals_Scraper
       Steam_Deals.deals_from_page(deal)
     end
   end
-
 end
