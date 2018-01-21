@@ -46,7 +46,7 @@ class CLI
       puts "Game:                               #{game.name}"
       puts "Discounted Price:                   #{game.discounted_price}"
       puts "% Off:                              #{game.price_discount}"
-      puts "Game URL:                     #{game.url}"
+      puts "Game URL:                            #{Steam_Deals.url_creation(game.url)}"
       puts ""
     end
   end
@@ -60,7 +60,7 @@ class CLI
       input = gets.to_i
       puts "#{list[input-1]}"
     elsif info_request.downcase == "no"
-      puts "Test2"
+      puts "Thanks! If you'd like to see more deals com'on back!"
     elsif info_request.downcase == "eggs"
       puts "Easter"
     else

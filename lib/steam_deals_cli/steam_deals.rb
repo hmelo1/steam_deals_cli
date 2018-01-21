@@ -23,6 +23,10 @@ class Steam_Deals
     @@all << self
   end
 
+  def self.url_creation(url)
+    app_url = "https://steamdb.info#{url}"
+  end
+
   def self.all
     @@all
   end
