@@ -29,7 +29,7 @@ class Steam_Deals
   end
 
   def self.widget_creation(id_num)
-    widget = "http://store.steampowered.com/app#{id_num}"
+    widget = "http://store.steampowered.com#{id_num}"
   end
 
   def self.all
@@ -53,13 +53,10 @@ class Steam_Deals
   end
 
   def self.additional_info(game)
-    #binding.pry
     details = Nokogiri::HTML(open(game.url))
-    #binding.pry
     game.developer = details.css("tbody tr td").children[8].text
     game.publisher = details .css("tbody tr td").children[11].text
     widget = Nokogiri::HTML(open(game.widget))
-    #binding.pry
     game.original_price = widget.css("div.discount_original_price").first.text
   end
 end

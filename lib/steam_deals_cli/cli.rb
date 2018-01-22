@@ -14,6 +14,7 @@ class CLI
   end
 
   def information
+    puts ""
     puts "Ex. For Weeklong Deals, type '1'"
     puts "If you'd like to exit, type '5'"
     input = gets.to_i
@@ -46,23 +47,23 @@ class CLI
       puts "Game:                               #{game.name}"
       puts "Discounted Price:                   #{game.discounted_price}"
       puts "% Off:                              #{game.price_discount}"
-      puts "Game URL:                            #{game.url}"
       puts ""
     end
   end
 
   def more_info(list)
-    puts "Would you like to see more info on any of these games?"
-    puts "Yes to continue and No to end the program. "
+    puts "Would you like to see more info on any of the games on the list?"
+    puts "Yes to continue and No to end the program."
     info_request = gets.chomp
     if info_request.downcase == "yes"
+      puts ""
       puts "Which would you like to know more about?"
       input = gets.to_i
+      puts ""
       puts "#{list[input-1].name}"
       Steam_Deals.additional_info(list[input-1])
-      puts "#{list[input-1].publisher}"
-      puts "#{list[input-1].developer}"
-      puts "#{list[input-1].original_price}"
+      added_info(list[input-1])
+      more_info(list)
     elsif info_request.downcase == "no"
       puts "Thanks! If you'd like to see more deals com'on back!"
     elsif info_request.downcase == "eggs"
@@ -71,5 +72,17 @@ class CLI
       puts "#{info_request} is invalid. Please try again."
       more_info(list)
     end
+  end
+
+  def added_info(game)
+    puts "----------------------------"
+    puts "Game:                               #{game.name}"
+    puts "Developer:                          #{game.developer}"
+    puts "Publisher:                          #{game.publisher}"
+    puts "Discounted Price:                   #{game.discounted_price}"
+    puts "% Off:                              #{game.price_discount}"
+    puts "Original Price:                     #{game.original_price}"
+    puts "Game URL:                           #{game.widget}"
+    puts "----------------------------"
   end
 end
