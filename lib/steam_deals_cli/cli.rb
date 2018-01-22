@@ -60,7 +60,9 @@ class CLI
       input = gets.to_i
       puts "#{list[input-1].name}"
       Steam_Deals.additional_info(list[input-1])
-      puts "#{list[input-1].test1}"
+      puts "#{list[input-1].publisher}"
+      puts "#{list[input-1].developer}"
+      puts "#{list[input-1].original_price}"
     elsif info_request.downcase == "no"
       puts "Thanks! If you'd like to see more deals com'on back!"
     elsif info_request.downcase == "eggs"

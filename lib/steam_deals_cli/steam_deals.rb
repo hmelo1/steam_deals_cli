@@ -1,8 +1,7 @@
 class Steam_Deals
 
-  attr_accessor :name, :price_discount , :category, :discounted_price, :url, :test1
-
-@@all = []
+  attr_accessor :name, :price_discount , :category, :discounted_price, :url, :publisher, :developer, :widget, :id_num, :original_price
+  @@all = []
 
   def self.deals_from_page(deal)
     self.new(
@@ -19,7 +18,9 @@ class Steam_Deals
     @price_discount = price_discount
     @discounted_price = discounted_price
     @category = category
+    @id_num = url
     @url = Steam_Deals.url_creation(url)
+    @widget =Steam_Deals.widget_creation(id_num)
     @@all << self
   end
 
@@ -27,8 +28,8 @@ class Steam_Deals
     app_url = "https://steamdb.info#{url}"
   end
 
-  def self.scrape_selection(url)
-      Nokogiri::HTML(open(url))
+  def self.widget_creation(id_num)
+    widget = "http://store.steampowered.com/app#{id_num}"
   end
 
   def self.all
@@ -52,11 +53,18 @@ class Steam_Deals
   end
 
   def self.additional_info(game)
-    #Steam_Deals.scrape_selection(game.url)
-    game.test1 = "Hello"
     #binding.pry
+    details = Nokogiri::HTML(open(game.url))
+    #binding.pry
+    game.developer = details.css("tbody tr td").children[8].text
+    game.publisher = details .css("tbody tr td").children[11].text
+    widget = Nokogiri::HTML(open(game.widget))
+    #binding.pry
+    game.original_price = widget.css("div.discount_original_price").first.text
   end
 end
+#Developer: .css("tbody tr td").children[8] => Heart Machine
+#Publisher: .css("tbody tr td").children[11] => Heart Machine
 
 #name: deal.css("a.b").text => Earth 2160
 #category: deal.css(".category").text => Weeklong Deal
