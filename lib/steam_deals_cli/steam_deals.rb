@@ -30,11 +30,11 @@ class Steam_Deals
   end
 
   def self.steam_creation(id_num)
-    id_num.slice! "/app"
     steam_url = "https://store.steampowered.com#{id_num}"
   end
 
   def self.widget_creation(id_num)
+    id_num.slice! "/app"
     widget = "https://store.steampowered.com/widget#{id_num}"
   end
 
