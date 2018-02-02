@@ -82,7 +82,7 @@ class CLI
     puts "Discounted Price:                   #{game.discounted_price}"
     puts "% Off:                              #{game.price_discount}"
     puts "Original Price:                     #{game.original_price}"
-    puts "Game URL:                           #{game.widget}"
+    puts "Game URL:                           #{game.steam_url}"
     puts "----------------------------"
   end
 end
