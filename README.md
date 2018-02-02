@@ -27,7 +27,7 @@ Or install it yourself as:
 
 Run the program, follow the on screen prompts and enjoy the discount prices!
 
-##Controls:
+## Controls:
 
 1 => Weeklong Deals
 2 => Special Promotoions
@@ -45,6 +45,3 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the SteamDealsCli project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/hmelo1/steam_deals_cli/blob/master/CODE_OF_CONDUCT.md).
-=======
-# steam_deals_cli
->>>>>>> 06daa6c460236c51baa88518516489504630e6c9
