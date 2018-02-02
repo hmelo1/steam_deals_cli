@@ -28,6 +28,7 @@ Or install it yourself as:
 Run the program, follow the on screen prompts and enjoy the discount prices!
 
 ##Controls:
+
 1 => Weeklong Deals
 2 => Special Promotoions
 3 => Daily Deals
